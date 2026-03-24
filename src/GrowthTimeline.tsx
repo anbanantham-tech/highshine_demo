@@ -33,8 +33,9 @@ const GrowthTimeline = () => {
           </motion.h2>
         </div>
 
-        <div className="relative w-full max-w-5xl mx-auto mt-12 overflow-x-auto pb-8 hide-scrollbar">
-          <div className="min-w-[800px] relative px-4">
+        <div className="relative w-full max-w-5xl mx-auto mt-12">
+          {/* Desktop/Tablet Horizontal Timeline */}
+          <div className="hidden md:block relative px-4">
             {/* Horizontal Line */}
             <div className="absolute top-[11px] left-4 right-4 h-[2px] bg-gray-800" />
             <motion.div 
@@ -69,6 +70,57 @@ const GrowthTimeline = () => {
                     {/* Content */}
                     <div className="text-center">
                       <h3 className="text-2xl font-bold text-white mb-2">
+                        {item.year}
+                      </h3>
+                      <h4 className="font-medium text-sm text-gray-200 mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-gray-500">
+                        {item.employees}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile Vertical Timeline */}
+          <div className="md:hidden relative px-4 py-4">
+            {/* Vertical Line */}
+            <div className="absolute top-4 bottom-4 left-[27px] w-[2px] bg-gray-800" />
+            <motion.div 
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute top-4 bottom-4 left-[27px] w-[2px] bg-gradient-to-b from-[#8B5CF6] to-[#F5A623] origin-top"
+            />
+
+            {/* Timeline Nodes */}
+            <div className="relative z-10 flex flex-col gap-10 w-full">
+              {timelineData.map((item, index) => {
+                const isLast = index === timelineData.length - 1;
+                
+                return (
+                  <motion.div 
+                    key={item.year} 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 + (index * 0.2) }}
+                    className="flex flex-row items-center relative group"
+                  >
+                    {/* Node */}
+                    <div 
+                      className={`w-6 h-6 rounded-full border-4 border-[#130922] relative z-20 mr-6 shrink-0 transition-transform duration-300 group-hover:scale-125 ${
+                        isLast ? 'bg-[#F5A623]' : 'bg-[#8B5CF6]'
+                      }`}
+                    />
+
+                    {/* Content */}
+                    <div className="text-left">
+                      <h3 className="text-2xl font-bold text-white mb-1">
                         {item.year}
                       </h3>
                       <h4 className="font-medium text-sm text-gray-200 mb-1">

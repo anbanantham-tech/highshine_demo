@@ -1,47 +1,20 @@
-# Highshine Demo
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-This project is a sample React application built using Vite. It showcases the capabilities of React for developing fast and efficient web applications. This README provides an overview of the project, setup instructions, and other relevant information for developers and users.
+# Run and deploy your AI Studio app
 
-## Features
-- Fast development with Vite
-- Build and serve assets quickly
-- Modern JavaScript features
+This contains everything you need to run your app locally.
 
-## Getting Started
+View your app in AI Studio: https://ai.studio/apps/644071de-515b-4933-9ed1-cc1516626fb5
 
-### Prerequisites
-To run this project, you need to have Node.js and npm installed on your machine.
+## Run Locally
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/anbanantham-tech/highshine_demo.git
-   cd highshine_demo
-   ```
-2. Install the dependencies:
-   ```bash
-   npm install
-   ```
+**Prerequisites:**  Node.js
 
-### Running the Development Server
-To start the project in development mode, run:
-```bash
-npm run dev
-```
-Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-### Building for Production
-To create a production build of the project, run:
-```bash
-npm run build
-```
-The production files will be generated in the `dist` directory.
-
-## Contributing
-If you would like to contribute to this project, feel free to submit a pull request or open an issue. Contributions are welcome!
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-Feel free to change this description to meet the specific goals and features of your project.
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
