@@ -24,7 +24,7 @@ const InteractiveGallery = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const getRelativePosition = (index: number) => {
+  const getRelativePosition = (index) => {
     const total = images.length;
     const half = Math.floor(total / 2);
     let diff = (index - currentIndex) % total;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Award, Lightbulb, Shield, Heart, Users, Lock, LucideIcon } from 'lucide-react';
+import { Award, Lightbulb, Shield, Heart, Users, Lock } from 'lucide-react';
 
 // Reusable ValueCard sub-component
-const ValueCard = ({ icon: Icon, title, description }: { icon: LucideIcon, title: string, description: string }) => {
+const ValueCard = ({ icon: Icon, title, description }) => {
   return (
     <div className="relative w-full h-72 rounded-[2rem] p-[2px] bg-gradient-to-r from-[#8B5CF6] via-[#F5A623] to-[#8B5CF6] animate-border-glow shadow-[0_0_20px_rgba(139,92,246,0.15)] hover:shadow-[0_0_30px_rgba(245,166,35,0.3)] transition-shadow duration-500">
       {/* Inner Flip Container */}
